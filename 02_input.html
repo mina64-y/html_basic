@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- input 태그 (사용자로부터 값을 입력받거나, 선택을 입력받는 용도로 사용) -->
+     <!--input 태그의 type 옵션(속성, attribute)은 text 다.  -->
+    <!-- Ctrl + spase (자동완성 목록 보기 단축키)-->
+     <!-- Ctrl + S (저장 단축키) -->
+     <input type="text" placeholder="아이디">
+     
+     <!-- placeholder 속성에 문구를 넣으면 사용자가 값을 입력하기 전에 문구가 보임 -->
+     <input type="password" placeholder="비밀번호">
+
+     <!-- input button은 버튼 내부에 아이콘을 넣을 수 없음 -->
+     <input type="button" value="로그인">
+
+     <!-- 버튼에 대해서는 별도로 button 태그 사용 -->
+      <button>회원가입</button>
+
+      <!-- 버튼 내부에 아이콘 넣기 -->
+       <!-- 아이콘은 검색창에 부트스트랩 아이콘 검색  -->
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+      </svg>
+      <!-- 닫는 태그 앞에는 /가 붙음 -->
+    </button>
+ <!-- 닫아야 하는 태그가 있고, 닫지 않아도 되는 태그가 있음 -->
+
+    <!-- 줄바꿈 태그 -->
+    <br>
+
+     <!-- 줄을 긋는 태그 (화면 전체)-->
+      <hr>   
+
+    <!-- 파일 입력받기 -->
+     <!-- multiple 속성을 넣으면 파일을 여러개 첨부받을 수 있음 -->
+     <!-- 속성 중에는 값을 할당하지 않아도 되는 속성이 존재 -->
+     <input type="file" multiple name="파일 선택" id="">
+
+     <hr>
+
+    <!-- 라디오 버튼은 사용자에게 보기 중 하나만 선택받고자 할 때 사용 -->
+    <!-- name에 동일한 값을 넣어서 그룹을 묶어줘야 한다 -->
+    <!-- 그룹으로 묶지 않으면 전부 선택 됨(다른 보기를 선택했을 때 기존 보기 체크해제가 되지 않음) -->
+    <input type="radio" name="food" id=""> 짜장면
+    <input type="radio" name="food" id=""> 짬뽕  
+    <input type="radio" name="food" id=""> 볶음밥
+     
+    <hr>
+    <!-- 모바일 사용자를 위해 라벨을 클릭해도 라디오 버튼이 선택되도록 하기 -->
+    <input type="radio" name="fish" id="p"> 
+    <label for="p">팥붕</label>  
+
+    <input type="radio" name="fish" id="s">
+    <label for="s">슈붕</label> 
+
+    <hr>
+    <!-- 보통 꼭 입력받아야 하는 항목에 대해서도 라디오 버튼 사용 (checked 속성 사용) -->
+    <input type="radio" name="fish2" id="p2"checked> 
+    <label for="p2">팥붕어빵</label>  
+
+    <input type="radio" name="fish2" id="s2">
+    <label for="s2">슈붕어빵</label>
+
+    <hr>
+
+    <!-- 체크박스는 사용자에게 중복선택을 입력받는데 주로 사용 -->
+    <!-- 또는 입력받지 않아도 되는 항목에도 사용 -->
+    <input type="checkbox" name="" id="java">
+    <label for="java">Java</label>
+    <input type="checkbox" name="" id=""> SQL
+    <input type="checkbox" name="" id=""> JS
+
+    <hr>
+
+    <!-- 셀렉트 박스, 콤보 박스 -->
+     <select name="" id="">
+        <option value="">=====선택=====</option>
+        <option value="">직접 입력</option>
+        <option value="">naver.com</option>
+        <option value="">gmail.com</option>
+        <option value="">daum.net</option>
+     </select> 
+
+     <hr>
+
+     <!-- 텍스트를 여러줄 입력받기 (줄바꿈 가능) -->
+      <textarea name="" id=""></textarea>
+
+      <hr>
+
+      <!-- 색상을 입력받기 -->
+       <input type="color" name="" id="">
+
+       <hr>
+
+       <!-- 날짜 입력받기 -->
+        <input type="date" name="" id="">
+
+        <hr>
+
+        <!-- 숫자 입력받기 -->
+         <input type="number" name="" id="">
+
+         <hr>
+
+         <!-- 숫자 입력받기, 음량 조절 같은 거 입력받기 -->
+          <!-- range 값의 범위 설정하기 -->
+           <!-- value를 넣으면 기본값 설정을 넣을 수 있음 -->
+          <input type="range" name="" id="" min="0" max="100" value="100">
+
+
+</body>
+</html>
