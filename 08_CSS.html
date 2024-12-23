@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+
+    <!-- style 태그 내부 HTML/CSS/JS 중 CSS 코드만 입력 -->
+    <style>
+        /* css 주석 */
+        /* css 스타일 이름 짓는 방식 (중간에 - 넣기기) */
+        .beige-box{
+
+            width: 200px;
+            height: 200px;
+            background-color: beige;
+            border: 1px solid black;
+            display: inline-block;
+        }
+
+        /* h1의 스타일 정의 */
+        .h1{
+            font-size: 34px;
+            font-weight: bold;
+            display: block;      /*beige-box의 inline-block으로 대체됨*/
+            margin-top: 21px;    /*beige-box에는 없으므로 유지됨*/
+            margin-bottom: 21px;
+        }
+
+        .bg-red{
+            /* background-color: red; */
+            background-color: rgb(255, 0, 0);
+        }
+
+
+
+    </style>
+    
+</head>
+<body>
+
+    <!-- display: block 한줄 다 차지 -->
+    <!-- display: inline-block 본인 영역만 차지 -->
+    <div style="display: inline-block; width: 200px; height: 200px; background-color: beige; border: 1px solid black;"></div>
+    <div style="display: inline-block; width: 200px; height: 200px; background-color: beige; border: 1px solid black;"></div>
+    <div style="display: inline-block; width: 200px; height: 200px; background-color: beige; border: 1px solid black;"></div>
+
+    <!-- 해당 스타일을 CSS로 묶어서 태그에 부여할 수 있음 -->
+    <!-- </beay> 위에 <style></style> 태그 생성 -->
+
+    <hr>
+
+    <!-- css에서 정의한 .beige-box를 태그에 적용할 때에는 class에 적용 -->
+     <div class="beige-box"></div>
+     <div class="beige-box"></div>
+     <div class="beige-box"></div>
+     <!-- h1은 기본적으로 margin 스타일이 적용되어 있음음 -->
+     <h1 class="beige-box"></h1>
+
+     <h1>오리지널 h1</h1>
+     <span class="h1">h1 스타일 적용한 span 태그</span>
+
+     <hr>
+
+     <!-- style이 하나인 경우 -->
+      <div style="background-color: blue;">파랑</div>
+
+      <!-- style이 하나인 경우에도 CSS 클래스를 이용하는 걸 권장 -->
+       <div class="bg-red">빨강</div>
+       <!-- style에 직접 적어놓은 스타일이 가장 마지막에 적용됨 -->
+       <div class="bg-red" style="background-color: blue;">파랑</div>
+
+
+</body>
+</html>
