@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin 과 Padding</title>
+
+    <style>
+        /* 화면 만들때 div의 레이아웃이 항상 보이게 하는 설정(화면 다 만들들면 지우기) */
+        div {
+            border: 2px solid black;
+        }
+
+        .container {
+            width: 500px;
+            height: 400px;
+
+            /* 내부 여백 추가 */
+            padding: 50px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+        
+        .container-b{
+            width: 500px;
+            height: 400px;
+        }
+
+        .box-b {
+            width: 200px;
+            height: 200px;
+
+            /* 바깥 여백 설정 */
+            margin: 50px;
+        }
+
+        .container-b img{
+            width: 50px;
+            height: 50px;
+
+            /* 마우스를 올리면 마우스 포인터가 변함 */
+            cursor: pointer;
+
+            /* margin을 주면 이미지 클릭의 영향을 받지 않음 */
+            /* padding은 이미지 클릭 영역에 작용 */
+            padding: 30px;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box"></div>
+    </div>
+
+    <!-- Ctrl + Shift + F 자동 줄맞춤 -->
+    <div class="container-b">
+        <div class="box-b"></div>
+    </div>
+    
+    <div class="container-b">
+        <!-- 구글에 close icon 이미지 검색 -->
+        <img src="https://static-00.iconduck.com/assets.00/close-icon-2048x2047-22z7exfk.png" alt="">
+    </div>
+
+</body>
+
+</html>

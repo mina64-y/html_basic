@@ -29,7 +29,41 @@
 
         .bg-red{
             /* background-color: red; */
+            /* RGB 사용 */
             background-color: rgb(255, 0, 0);
+        }
+
+        .bg-green{
+            /* 색상명 사용 */
+            background-color: green;
+        }
+
+        .bg-blue{
+            /* 헥스(Hex) 코드 사용 */
+            background-color: #0000ff;
+        }
+
+        .bg-rgba{
+            /* a는 alpha값을 의미, 투명도와 같음. 0~1 사이의 소수 */
+            background-color: rgba(255, 0, 0, 0.3);
+        }
+
+        .bg-gray{
+            background-color: gray;
+        }
+
+        .bg-hex{
+            /* rgba 에 대한 헥스코드 사용 */
+            /* 0.3에 대해 00~ff 사이의 16진수로 표현 */
+            /* 30%니까 0~255에 대해 76정도 -> 16진수로 4c */
+            background-color: #ff00004c;
+        }
+
+        .box{
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            border: 1px solid; color: #000;
         }
 
 
@@ -51,25 +85,43 @@
     <hr>
 
     <!-- css에서 정의한 .beige-box를 태그에 적용할 때에는 class에 적용 -->
-     <div class="beige-box"></div>
-     <div class="beige-box"></div>
-     <div class="beige-box"></div>
-     <!-- h1은 기본적으로 margin 스타일이 적용되어 있음음 -->
-     <h1 class="beige-box"></h1>
+    <div class="beige-box"></div>
+    <div class="beige-box"></div>
+    <div class="beige-box"></div>
+    <!-- h1은 기본적으로 margin 스타일이 적용되어 있음음 -->
+    <h1 class="beige-box"></h1>
 
-     <h1>오리지널 h1</h1>
-     <span class="h1">h1 스타일 적용한 span 태그</span>
+    <h1>오리지널 h1</h1>
+    <span class="h1">h1 스타일 적용한 span 태그</span>
 
-     <hr>
+    <hr>
 
-     <!-- style이 하나인 경우 -->
-      <div style="background-color: blue;">파랑</div>
+    <!-- style이 하나인 경우 -->
+    <div style="background-color: blue;">파랑</div>
 
-      <!-- style이 하나인 경우에도 CSS 클래스를 이용하는 걸 권장 -->
-       <div class="bg-red">빨강</div>
-       <!-- style에 직접 적어놓은 스타일이 가장 마지막에 적용됨 -->
-       <div class="bg-red" style="background-color: blue;">파랑</div>
+    <!-- style이 하나인 경우에도 CSS 클래스를 이용하는 걸 권장 -->
+    <div class="bg-red">빨강</div>
+    <!-- style에 직접 적어놓은 스타일이 가장 마지막에 적용됨 -->
+    <div class="bg-red" style="background-color: blue;">파랑</div>
 
+    <hr>
+
+    <!-- 대부분 중복되는 스타일을 가지지만 1~2개 정도 차이가 있는 경우 -->
+    <div style="display: inline-block; width: 200px; height: 200px; background-color: red; border: 1px solid #000;"></div>
+    <div style="display: inline-block; width: 200px; height: 200px; background-color: green; border: 1px solid #000;"></div>
+    <div style="display: inline-block; width: 200px; height: 200px; background-color: blue; border: 1px solid #000;"></div>
+
+    <!-- 중복된 스타일을 box에 묶어서 부여  -->
+    <!-- class를 여러개 부여할 수 있다 -->
+    <div class="box bg-red"></div>
+    <div class="box bg-green"></div>
+    <div class="box bg-blue"></div>
+
+    <hr>
+
+    <div class="box bg-rgba"></div> <!-- 투명도를 줬기 때문에, 뒷 배경이 하얀색일 때 분홍색으로 보이지만, 
+                                         실제로는 분홍색이 아닌 빨강색이다. -->
+    <div class="box bg-gray"></div>
 
 </body>
 </html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자</title>
+
+    <style>
+        /* .은 class에 대한 선택자(90% 이상 사용) */
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+            border: 1px solid black;
+        }
+
+        /* 모든 div에 스타일을 적용한다면(비추천)  */
+        div{
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        /* 모든 img 태그에 widht를 적용한다면(비추천) */
+        img{
+            width: 300px;
+        }
+
+        body{
+            background-color: rgb(4, 30, 70);
+        }
+
+        /* id가 text인 태그에 스타일 적용(비추천) */
+        #text{
+            color: aliceblue;
+        }
+
+        /* 모든 태그에 대해 스타일 적용 */
+        /* 각 태그의 기본 마진, 패딩을 제거하는 데는 많이 사용 */
+        /*  *은 모든 태그를 의미 */
+        *{
+            margin: 0;         /*  태그의 외부 여백 */
+            padding: 0;        /*  태그의 내부 여백 */
+        }
+
+        .bg-red{
+            background-color: red;
+        }
+
+        /* 특정 태그의 특정 속성을 선택해서 스타일 부여 */
+        /* type= "email" 인 input에 스타일 부여 */
+        input[type=email]{
+            background-color: yellow;
+        }
+
+        input[name=inputPw]{
+            background-color: pink;
+        }
+
+        .card{
+            width: 300px;
+            background-color: white;
+        }
+
+        /* card 클래스 내부 p태그에 스타일 적용 */
+        .card p{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">텍스트</div>
+
+    <img src="dog.jpg" alt="">
+    <img src="images/포메.jpeg" alt="">
+
+    <!-- h1이 가장 글자가 크고, h6이 가장 글자가 작음 -->
+     <h3 id="text">크리스마스 이브</h3>
+
+     <input type="text" class="bg-red">
+     <!-- 태그의 id 속성의 값은 전체 html 문서 내에서 중복되어선 안된다 -->
+     <input type="email" name="inputEmail" id="text">
+     <input type="password" name="inputPw" id="">
+
+     <div class="card">
+        <div>
+            <img src="https://health.chosun.com/site/data/img_dir/2023/12/22/2023122201738_0.jpg  " alt="">
+        </div>
+        <div>
+            <p>크리스마스 이브</p>
+        </div>
+     </div>
+
+</body>
+</html>

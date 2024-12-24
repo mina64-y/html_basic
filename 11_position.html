@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+
+    <style>
+        div{
+            border: 2px solid black;
+        }
+
+        .banner{
+            width: 1000px;
+            /* 공중에 뜬 자식태그의 부모태그에 position: relative; 부여 */
+            /* 그래야 공중에 뜬 자식태그의 위치를 조정할 수 있음 */
+            position: relative;
+        }
+
+        .text{
+            /* 1.공중으로 띄움 */
+            position: absolute;
+            
+            /* 2.위치조정 */
+            /* 50%는 부모의 크기의 절반을 의미 */
+            top: 50%;   /* 50%는 부모의 heigth의 50% = 150px */
+            left: 50%;  /* 50%는 부모의 width의 50% = 500px */
+
+            /* 50%는 현재 본인 태그의 width 절반, heigth의 절반 */
+            transform: translate(-50%, -80%);
+        }
+
+        .text h1{
+            margin: 0;
+            color: white;
+            text-align: center;
+        }
+
+        .btn{
+            position: absolute;
+
+            /* 수평 정렬 */
+            left: 50%;
+            transform: translate(-50%, 0);
+
+            /* 부모의 하단 모서리 기준으로 50px 위로 올림 */
+            bottom: 50px;
+
+            background-color: white;
+            padding: 16px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 부모 -->
+    <div class="banner">
+        <img src="https://cdn.imweb.me/thumbnail/20230713/2487d7b4959c6.jpg" alt="">
+        <!-- 자식 -->
+        <div class="text">
+            <h1>미래융합교육원의 교육과정에 대해</h1>
+            <h1>더 자세히 상담을 받아보세요</h1>
+        </div>
+        <div class="btn">실시간 상담하기</div>
+    </div>
+
+</body>
+</html>
