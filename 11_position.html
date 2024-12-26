@@ -1,42 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Position</title>
 
     <style>
-        div{
-            border: 2px solid black;
+        div {
+            border: 0px solid black;
         }
 
-        .banner{
+        .banner {
             width: 1000px;
+            height: 300px;
             /* 공중에 뜬 자식태그의 부모태그에 position: relative; 부여 */
             /* 그래야 공중에 뜬 자식태그의 위치를 조정할 수 있음 */
             position: relative;
+
+            /* 내부 이미지가 heidht 300보다 커서 밖으로 삐져나와있음-> 숨기기 */
+            overflow: hidden;
+
+            /* 모서리를 둥글게 하기 */
+            border-radius: 20px;
+            /* 현재 div를 화면 수평방향 중앙으로 위치시키기 */
+            margin: auto;
         }
 
-        .text{
+        .banner img {
+            /* 이미지의 밝기 조정 (원본이 100%) */
+            filter: brightness(60%);
+        }
+
+        .text {
             /* 1.공중으로 띄움 */
             position: absolute;
-            
+
             /* 2.위치조정 */
             /* 50%는 부모의 크기의 절반을 의미 */
-            top: 50%;   /* 50%는 부모의 heigth의 50% = 150px */
-            left: 50%;  /* 50%는 부모의 width의 50% = 500px */
+            top: 50%;
+            /* 50%는 부모의 heigth의 50% = 150px */
+            left: 50%;
+            /* 50%는 부모의 width의 50% = 500px */
 
             /* 50%는 현재 본인 태그의 width 절반, heigth의 절반 */
             transform: translate(-50%, -80%);
         }
 
-        .text h1{
+        .text h1 {
             margin: 0;
             color: white;
             text-align: center;
         }
 
-        .btn{
+        .btn {
             position: absolute;
 
             /* 수평 정렬 */
@@ -47,11 +64,142 @@
             bottom: 50px;
 
             background-color: white;
-            padding: 16px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-left: 16px;
+            padding-right: 16px;
+
+            border-radius: 50px;
+
+            cursor: pointer;
+
+            /* 스타일이 변할시 변하는 시간 조정 */
+            transition-duration: 0.4s;
+
         }
 
+        /* .btn에 마우스를 올렸을 때 적용할 스타일 지정 */
+        .btn:hover {
+            background-color: orange;
+            color: white;
+        }
+
+        .navigation {
+            /* 내부 요소 수평 방향 나열 */
+            display: flex;
+
+            /* 내부 요소 균일하게 퍼뜨리기 */
+            justify-content: space-between;
+
+            padding-left: 200px;
+            padding-right: 200px;
+
+            /* 공중으로 띄워서 브라우저 창 기준으로 위치 고정 */
+            position: fixed;
+
+            /* 브라우저 최상단에 위치시키기 */
+            top: 0;
+
+            /* 공중에 띄우면 widht가 내부 요소만 감싸도록 바뀌므로, 화면 전체 너비로 다시 적용 */
+            width: calc(100% - 400px);
+
+            background-color: white;
+
+        }
+        
+        /* navigation의 3번째 자식 div에 스타일 적용 */
+        .navigation > div:nth-child(3) {
+            display: flex;
+            align-items: center;
+            width: 170px;
+            justify-content: space-between;
+            
+        }
+        
+        .menu{
+            display: flex;
+            /* 수직 방향으로 가운데 정렬 */
+            align-items: center;
+        }
+        
+        .menu a{
+            color: black;
+            font-weight: bold;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+            
+            text-decoration: none;
+        }
+        
+        .login{
+            color: orange;
+            border: 1px solid orange;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-left: 12px;
+            padding-right: 12px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+        }
+
+        .login:hover{
+            color: white;
+            background-color: orange;
+        }
+       
+        .dropdown{
+            /* 내부 요소를 수직 방향으로 나열 */
+            display: flex;
+            flex-direction: column;
+
+            position: absolute;
+            top: 100%;
+            
+            background-color: white;
+
+            /* 화면에 보이지 않게 하기 */
+            visibility: hidden;
+
+            border-radius: 10px;
+
+            /* 테두리에 그림자 효과 주기 */
+            /* 첫번째 px은 그림자의 x축 방향 위치 */
+            /* 두번째 px은 그림자의 y축 방향 위치 */
+            /* 세번째 px은 그림자의 옅은 정도도 */
+            /* 네번째 px은 그림자의 크기 */
+            box-shadow: 0px 6px 10px 0px #dddddd;
+        }
+
+        /* menu의 자식 div에 마우스를 올리면 해당 자식 div가 보이게 하기기 */
+        .menu > div:hover > .dropdown{
+            visibility: visible;
+        }
+
+        /* menu의 자식 div 들에게만 스타일 부여 */
+        .menu > div{
+            position: relative;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .quick-nav{
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translate(0,-50%);
+            background-color: white;
+        }
+
+        .quick-menu{
+            width: 100px;
+            height: 100px;
+        }
     </style>
 </head>
+
 <body>
     <!-- 부모 -->
     <div class="banner">
@@ -64,5 +212,101 @@
         <div class="btn">실시간 상담하기</div>
     </div>
 
+    <div class="banner">
+        <img src="https://cdn.imweb.me/thumbnail/20230713/2487d7b4959c6.jpg" alt="">
+        <!-- 자식 -->
+        <div class="text">
+            <h1>미래융합교육원 교육과정에 대해</h1>
+            <h1>더 자세한 상담을 받아보세요</h1>
+        </div>
+        <div class="btn">실시간 상담하기</div>
+    </div>
+
+    <div class="banner">
+        <img src="https://cdn.imweb.me/thumbnail/20230713/2487d7b4959c6.jpg" alt="">
+        <!-- 자식 -->
+        <div class="text">
+            <h1>미래융합교육원 교육과정에 대해</h1>
+            <h1>더 자세한 상담을 받아보세요</h1>
+        </div>
+        <div class="btn">실시간 상담하기</div>
+    </div>
+
+    <div class="banner">
+        <img src="https://cdn.imweb.me/thumbnail/20230713/2487d7b4959c6.jpg" alt="">
+        <!-- 자식 -->
+        <div class="text">
+            <h1>미래융합교육원 교육과정에 대해</h1>
+            <h1>더 자세한 상담을 받아보세요</h1>
+        </div>
+        <div class="btn">실시간 상담하기</div>
+    </div>
+
+    <div class="banner">
+        <img src="https://cdn.imweb.me/thumbnail/20230713/2487d7b4959c6.jpg" alt="">
+        <!-- 자식 -->
+        <div class="text">
+            <h1>미래융합교육원 교육과정에 대해</h1>
+            <h1>더 자세한 상담을 받아보세요</h1>
+        </div>
+        <div class="btn">실시간 상담하기</div>
+    </div>
+
+    <!-- 상단 네비게이션 바 -->
+    <div class="navigation">
+        <div>
+            <a href="https://mcea.co.kr/">
+                <img src="https://cdn.imweb.me/thumbnail/20231106/fa1de722b8b8c.png" alt="" width="200">
+            </a>
+        </div>
+        <div class="menu">
+           <div>
+            <a href="">교육원 소개</a>
+            <div class="dropdown">
+                <a href="">교육원 소개</a>
+                <a href="">연혁</a>
+                <a href="">인사말</a>
+                <a href="">언론보도</a>
+                <a href="">오시는 길</a>
+            </div>
+        </div> 
+           <div>
+            <a href="">과정안내</a>
+            <div class="dropdown">
+                <a href="">교육과정 소개</a>
+                <a href="">교육일정</a>
+            </div>  
+        </div> 
+           <div>
+            <a href="">취업센터</a>
+        </div> 
+           <div>
+            <a href="">프로젝트</a>
+        </div> 
+           <div>
+            <a href="">상담센터</a>
+        </div> 
+           <div>
+            <a href="">커뮤니티</a>
+        </div> 
+        </div>
+        <div>
+            <div class="login">로그인</div>
+            <div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+              </svg>
+            </div>
+            <div>
+                <img src="https://cdn.imweb.me/upload/S2023070315976c924cb4e/2706a2c258507.png" alt="" width="50">
+            </div>
+        </div>
+    </div>
+
+    <div class="quick-nav">
+        <div class="quick-menu">질문과 답변</div>
+        <div class="quick-menu">카카오톡 상담</div>
+        <div class="quick-menu">대표번호</div>
+    </div>
 </body>
+
 </html>

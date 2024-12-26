@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+
+    <style>
+
+        div{
+            border: 2px solid black;
+        }
+
+        .card{
+            width: 300px;
+            height: 600px;
+        }
+
+        .img-box{
+            /* widht는 부모의 300px에 적용되어 있음 */
+            height: 300px;
+            border-radius: 10px;
+            /* 둥근 모서리 바깥으로 삐져나온 이미지 숨기기기 */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .prod-img{
+            width: 300px;
+            height: 300px;
+        }
+
+        .like-box{
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+
+            background-color: #00000070;
+
+            /* 내부 요소 중앙 정렬 */
+            display: flex;             /* flex를 줘야 수평, 수직 정렬 가능 */
+            justify-content: center;   /* 수평방향 정렬 */
+            align-items: center;       /* 수직방향 정렬 */
+        }
+
+        .like{
+            width: 30px;
+            height: 30px;
+            
+            filter: contrast(0%) brightness(500%);
+        }
+
+        .count-box{display: flex;
+            margin-top: 5px;
+            margin-bottom: 5px;
+           
+        }
+
+         /* count-box 내 첫번째 div와 세번째 div에 스타일 적용 */
+         .count-box > div:nth-child(1), .count-box:nth-child(3){
+             width: 30%;
+         }
+            /* count-box 내 두번째 div에 스타일 적용 */
+            .count-box:nth-child(2){
+                width: 40%;
+            }
+
+            /* count-box 내 모든 div에 스타일 적용 */
+            .count-box > div{
+                display: flex;
+                justify-content: center;
+            }
+        
+            
+        
+    </style>
+</head>
+<body>
+    
+    <div class="card">
+        <div class="img-box">
+            <img class="prod-img" src="https://sitem.ssgcdn.com/21/15/04/item/1000266041521_i1_580.jpg" alt="">
+            <div class="like-box">
+                <img class="like" src="https://cdn-icons-png.flaticon.com/512/25/25424.png" alt="">
+            </div>
+        </div>
+
+        <div class="count-box">
+            <div>-</div>
+            <div>0</div>
+            <div>+</div>
+        </div>
+        <div class="box">전단행사</div>
+
+    </div>
+
+
+</body>
+</html>
