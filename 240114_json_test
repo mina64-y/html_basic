@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json_test</title>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+    var text = '{"name":"맘대로","street":"서울시 종로구","phone":"010-123-4567"}';
+    var obj = JSON.parse(text);
+    document.getElementById("demo").innerHTML = obj.name + "<br>" +
+    dbj.street + " <br>" + obj.phone;
+</script>
+</body>
+</html>
