@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>imgChange</title>
+  <script>
+    function img_view(imgName) {
+    document.myimg2.src = imgName;
+  }
+    function imgChange(obj, img)
+    {
+        obj.src = img;
+    }
+  </script>
+</head>
+<body>
+
+<img name="myimg" src="/images/login.gif"
+   onmouseover="imgChange(this, '/images/logout.gif')"
+   onmouseout="imgChange(this, '/images/login.gif')">
+<img src="/images/first.jpg" onmouseover="imgChange(this, '/images/register.gif')"
+    onmouseout="imgChange(this, '/images/first.jpg')">
+<img src="/images/img1.jpg" width="200" height="100" name="myimg2"
+    onmouseover="img_view('/images/img2.jpg')" onmouseout="img_view('/images/img1.jpg')">
+
+</body>
+</html>
